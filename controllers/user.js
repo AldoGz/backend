@@ -8,7 +8,7 @@ const pool = new Pool({
 
 const crearCliente = async (req, res) => {
   const {
-    body: { nombre, apellido, fechaNacimiento },
+    body: { nombre, apellido, fechaNacimiento }
   } = req;
   await pool.query(
     "INSERT INTO cliente(nombre,apellido,fechanacimiento) VALUES($1,$2,$3)",
