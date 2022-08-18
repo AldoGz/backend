@@ -34,7 +34,7 @@ const promedioEdadCliente = async (req, res) => {
 };
 
 const listarCliente = async (req, res) => {
-  const response = await pool.query("SELECT * FROM cliente");
+  const response = await pool.query("SELECT id, CONCAT(nombre,' ',apellido) as cliente , EXTRACT(YEAR FROM AGE(fechanacimiento)) as edad FROM cliente");
   res.json(response.rows);
 };
 
