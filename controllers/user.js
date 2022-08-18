@@ -27,7 +27,7 @@ const crearCliente = async (req, res) => {
 
 const promedioEdadCliente = async (req, res) => {
   const { rows } = await pool.query(
-    "SELECT AVG(EXTRACT(YEAR FROM AGE(fechanacimiento))) AS promedio FROM cliente"
+    "SELECT AVG(EXTRACT(YEAR FROM AGE(fechanacimiento)))::int AS promedio FROM cliente"
   );
   const [promedio] = rows;
   res.json(promedio);
