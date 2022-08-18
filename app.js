@@ -13,7 +13,7 @@ const routerClientes = require("./routers/user");
 app.use("/api/cliente",routerClientes);
 
 app.get("/", (req,res) => {
-  res.send("Hola Mundo");
+  res.send("Hola Mundo!");
 })
 
 
