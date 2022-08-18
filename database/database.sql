@@ -1,5 +1,3 @@
-create database node_test;
-
 create table cliente(
 	id serial primary key,
 	nombre text not null,
