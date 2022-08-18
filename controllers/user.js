@@ -7,6 +7,7 @@ const pool = new Pool({
 });
 
 const crearCliente = async (req, res) => {
+  res.header('Access-Control-Allow-Headers, *, Access-Control-Allow-Origin', 'Origin, X-Requested-with, Content_Type,Accept,Authorization','http://localhost:19006');
   const {
     body: { nombre, apellido, fechaNacimiento },
   } = req;
