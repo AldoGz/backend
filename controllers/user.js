@@ -7,7 +7,6 @@ const pool = new Pool({
 });
 
 const crearCliente = async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
   const {
     body: { nombre, apellido, fechaNacimiento },
   } = req;
@@ -27,7 +26,6 @@ const crearCliente = async (req, res) => {
 };
 
 const promedioEdadCliente = async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
   const { rows } = await pool.query(
     "SELECT AVG(EXTRACT(YEAR FROM AGE(fechanacimiento))) AS promedio FROM cliente"
   );
@@ -36,7 +34,6 @@ const promedioEdadCliente = async (req, res) => {
 };
 
 const listarCliente = async (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
   const response = await pool.query("SELECT * FROM cliente");
   res.json(response.rows);
 };
